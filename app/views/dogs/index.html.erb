@@ -1,0 +1,7 @@
+<h1>Dogs...</h1>
+<ul>
+  <% @dogs.each do |dog| %>
+  <li><%= linkt_to dog.breed, dog_path(dog) %></li>
+  <% end %>
+</ul>
+<%= link_to "Go to Dog Home page", root_path%>
