@@ -6,5 +6,4 @@ class Dog < ApplicationRecord
   validates :price, presence: true
   validates :size, presence: true, inclusion: { in: %w[Extra-Small Small Medium Large Extra-Large] }
   validates :description, presence: true
-
 end
