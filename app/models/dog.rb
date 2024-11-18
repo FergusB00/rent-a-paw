@@ -1,5 +1,6 @@
 class Dog < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
 
   validates :breed, presence: true
   validates :age, presence: true
