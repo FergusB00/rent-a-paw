@@ -3,7 +3,7 @@ class CreateDogs < ActiveRecord::Migration[7.1]
     create_table :dogs do |t|
       t.string :breed
       t.integer :age
-      t.integer :price
+      t.float :price
       t.string :size
       t.text :description
       t.boolean :status, default: false

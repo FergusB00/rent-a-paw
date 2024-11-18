@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_18_144659) do
   create_table "dogs", force: :cascade do |t|
     t.string "breed"
     t.integer "age"
-    t.integer "price"
+    t.float "price"
     t.string "size"
     t.text "description"
     t.boolean "status", default: false
