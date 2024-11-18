@@ -6,7 +6,7 @@ class CreateDogs < ActiveRecord::Migration[7.1]
       t.integer :price
       t.string :size
       t.text :description
-      t.boolean :status
+      t.boolean :status, default: false
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
