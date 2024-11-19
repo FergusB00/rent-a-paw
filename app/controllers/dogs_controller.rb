@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show]
+  before_action :set_dog, only: [:show, :create, :update, :destroy]
 
   def index
     @dogs = Dog.all
@@ -15,14 +15,27 @@ class DogsController < ApplicationController
     if @dog.save
       redirect_to profile_path, notice: "Dog successfully added"
     else
-      render "users/profile", status: :unprocessable_entity
+      redirect_to profile_path, status: :unprocessable_entity
     end
+  end
+
+  def update
+    if @dog.update(dog_params)
+      redirect_to profile_path, notice: "Dog information successfully updated"
+    else
+      redirect_to profile_path, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @dog.destroy
+    redirect_to profile_path, notice: "#{@dog.name} deleted"
   end
 
   private
 
   def set_dog
-    @dog = Dog.find(params[:dog_id])
+    @dog = Dog.find(params[:id])
   end
 
   def dog_params
