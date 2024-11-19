@@ -30,6 +30,7 @@ User.create(
 users = User.all
 
 Dog.create(
+  name: "Chew-Barka",
   breed: "Golden Retriever",
   age: 1,
   price: 50,
@@ -39,6 +40,7 @@ Dog.create(
 )
 
 Dog.create(
+  name: "Barktholomew",
   breed: "German Shepherd",
   age: 5,
   price: 30,

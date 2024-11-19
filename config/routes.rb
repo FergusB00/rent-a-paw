@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   root "dogs#home"
 
-  resources :dogs
+  resources :dogs, only: [:index, :show]
 end
