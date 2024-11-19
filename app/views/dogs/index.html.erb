@@ -1,0 +1,15 @@
+<body>
+  <div class="container">
+    <h1>Dogs for rent</h1>
+
+    <div class="list-group">
+      <% @dogs.each do |dog| %>
+        <h3><%= link_to dog.breed, dog_path(dog) %><h3>
+        <p><%= dog.size %></p>
+        <p><%= "£#{dog.price} per day" %>
+      <% end %>
+
+    </div>
+  <%= link_to "Go to Dog Home page", root_path%>
+  </div>
+</body>
