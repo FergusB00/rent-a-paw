@@ -1,9 +1,19 @@
 class DogsController < ApplicationController
+  before_action :set_dog, only: [:show]
+
   def index
     @dogs = Dog.all
   end
 
   def show
-    @dog = Dog.find(params[:id])
   end
+
+
+  private
+
+  def set_dog
+    @dog = Dog.find(params[:dog_id])
+  end
+
+
 end

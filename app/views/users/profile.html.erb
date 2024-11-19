@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="dog-heading">
+    <h1><%= "Hi #{@user.first_name}" %></h1>
+    <% if @user.dogs.any? %>
+      <h3><%= "Here are your dogs listed for hire:" %>
+    <% else %>
+      <h3><%= "You currently have no dogs listed for hire." %>
+    <% end %>
+  </div>
+
+  <div class="dog-cards">
+    <ul class="list-group">
+      <% @user.dogs.each do |dog| %>
+        <li class="list-group-item"><%= link_to dog.name, dog_path(dog) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="mb-3 mt-4">
+    <h1>Add a new dog:</h1>
+    <%= render "form", dog: @dog %>
+  </div>
+
+  <div class="booking-heading">
+    <% if @user.bookings.any? %>
+      <h3><%= "Here are your current bookings:" %>
+    <% else %>
+      <h3><%= "You currently have no bookings." %>
+    <% end %>
+  </div>
+
+  <div class="booking-cards">
+    <ul class="list-group">
+      <% @user.bookings.each do |booking| %>
+        <li class="list-group-item"><%= "#{booking.start_date} - #{booking.end_date}" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
