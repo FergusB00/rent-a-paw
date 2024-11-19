@@ -8,12 +8,10 @@ class DogsController < ApplicationController
   def show
   end
 
-
   private
 
   def set_dog
-    @dog = Dog.find(params[:dog_id])
+    @dog = Dog.find(params[:id])
   end
-
 
 end
