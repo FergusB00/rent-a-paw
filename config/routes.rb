@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "/profile", to: "users#profile"
 
-  resources :dogs, only: [:index, :show] do
+  resources :dogs, only: [:index, :show, :create] do
     resources :bookings
   end
 end
