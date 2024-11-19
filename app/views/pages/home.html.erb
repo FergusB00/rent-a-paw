@@ -1,2 +1,33 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<div id="dogCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="dog1.jpg" class="d-block w-100" alt="Dog 1">
+    </div>
+    <div class="carousel-item">
+      <img src="dog2.jpg" class="d-block w-100" alt="Dog 2">
+    </div>
+    <div class="carousel-item">
+      <img src="dog3.jpg" class="d-block w-100" alt="Dog 3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#dogCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#dogCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+// Our simple navbar
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container-fluid d-flex justify-content-around">
+    <a href="#" class="btn btn-outline-primary">Add</a>
+    <a href="#" class="btn btn-outline-primary">Rent</a>
+    <a href="#" class="btn btn-outline-secondary">Log In</a>
+  </div>
+</nav>
