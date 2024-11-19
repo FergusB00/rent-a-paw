@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
-  def home
-  end
+
 
   def index
     @bookings = Booking.all
@@ -9,4 +8,16 @@ class BookingsController < ApplicationController
   def show
     @bookings = Booking.find(params[:id])
   end
+
+  def new
+    @dog = Dog.find(params[:dog_id])
+    @booking = Booking.new
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
+
 end
