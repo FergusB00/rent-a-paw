@@ -16,9 +16,11 @@
     </ul>
   </div>
 
-  <div class="mb-3 mt-4">
-    <h1>Add a new dog:</h1>
-    <%= render "form", dog: @dog %>
+  <div data-controller="toggle" class="mb-3 mt-4">
+    <button data-action="click->toggle#fire" class="btn btn-outline-primary">Add a new dog:</button>
+    <div data-toggle-target="togglableElement" class="d-none">
+      <%= render "form", dog: @dog %>
+    </div>
   </div>
 
   <div class="booking-heading">
