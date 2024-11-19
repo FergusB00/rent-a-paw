@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="heading">
+    <h1><%= "Hi #{@user.first_name}" %></h1>
+    <h3><%= "Here are your dogs listed for hire:" %>
+  </div>
+
+  <div class="dog-cards">
+    <ul class="list-group">
+      <% @user.dogs.each do |dog| %>
+        <li class="list-group-item"><%= link_to dog.name, dog_path(dog) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="mb-3 mt-4">
+    <h1>Add a new dog:</h1>
+    <%= render "form", dog: @dog %>
+  </div>
+
+</div>
