@@ -5,3 +5,11 @@
 <h3>This dog is a <%= @dog.breed %></h3>
 <h3>This dog is <%= @dog.age %> years old</h3>
 <h3><%= @dog.size %> sized</h3>
+
+<div data-controller="toggle" class="mt-5">
+  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Book this Dog 🐶</button>
+
+  <div data-toggle-target="togglableElement" class="d-none">
+    <%= render "bookingform", booking: @booking, dog: @dog%>
+  </div>
+</div>
