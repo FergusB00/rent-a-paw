@@ -1,4 +1,6 @@
-<div class="container">
+
+
+<div class="container" data-controller="insert-in-list">
   <div class="dog-heading">
     <h1><%= "Hi #{@user.first_name}" %></h1>
     <% if @user.dogs.any? %>
@@ -9,51 +11,17 @@
   </div>
 
   <div class="dog-cards">
-    <ul class="list-group">
+    <div class="list-group" data-insert-in-list-target="items">
       <% @user.dogs.each do |dog| %>
-      <div class="d-flex align-items-center justify-content-between mb-3">
-        <!-- Dog Name -->
-        <%= link_to dog.name, dog_path(dog) %>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dog<%= dog.id %>"><%= "Edit #{dog.name}'s info" %></button>
-        <!-- Modal -->
-        <div class="modal fade" id="dog<%= dog.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <%= simple_form_for(dog) do |f| %>
-                  <%= f.input :name %>
-                  <%= f.input :breed %>
-                  <%= f.input :age %>
-                  <%= f.input :price %>
-                  <%= f.input :size, collection: %w[Extra-Small Small Medium Large Extra-Large] %>
-                  <%= f.input :description %>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <%= f.button :submit, class: "btn btn-primary" %>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Delete button -->
-        <button> <%= link_to "Delete", profile_path,
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %> </button>
-      </div>
+        <%= render "dogs/dog", dog: dog %>
       <% end %>
-    </ul>
+    </div>
   </div>
 
   <div data-controller="toggle" class="mb-3 mt-4">
     <button data-action="click->toggle#fire" class="btn btn-outline-primary">Add a new dog:</button>
-    <div data-toggle-target="togglableElement" class="d-none">
-      <%= render "form", dog: @dog %>
+    <div data-toggle-target="togglableElement" class="d-none" id="dogs" >
+      <%= render "dogs/form", dog: @dog %>
     </div>
   </div>
 

@@ -1,5 +1,6 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :create, :update, :destroy]
+  require 'json'
+  before_action :set_dog, only: [:show, :update, :destroy]
 
   def index
     @dogs = Dog.all
@@ -12,10 +13,16 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     @dog.user = current_user
-    if @dog.save
-      redirect_to profile_path, notice: "Dog successfully added"
-    else
-      redirect_to profile_path, status: :unprocessable_entity
+    p "valid - #{@dog.valid?}"
+    respond_to do |format|
+      if @dog.save
+        p "here"
+        format.html { redirect_to profile_path, notice: "Dog successfully added" }
+        format.json
+      else
+        format.html { redirect_to profile_path, status: :unprocessable_entity }
+        format.json
+      end
     end
   end
 
@@ -29,7 +36,7 @@ class DogsController < ApplicationController
 
   def destroy
     @dog.destroy
-    redirect_to profile_path, notice: "#{@dog.name} deleted"
+    redirect_to profile_path, status: :see_other, notice: "#{@dog.name} deleted"
   end
 
   private
