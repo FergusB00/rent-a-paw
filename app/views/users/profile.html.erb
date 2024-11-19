@@ -11,6 +11,8 @@
   <div class="dog-cards">
     <ul class="list-group">
       <% @user.dogs.each do |dog| %>
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <!-- Dog Name -->
         <%= link_to dog.name, dog_path(dog) %>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dog<%= dog.id %>"><%= "Edit #{dog.name}'s info" %></button>
@@ -19,19 +21,28 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit information</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <%= render "form", dog: dog %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <%= simple_form_for(dog) do |f| %>
+                  <%= f.input :name %>
+                  <%= f.input :breed %>
+                  <%= f.input :age %>
+                  <%= f.input :price %>
+                  <%= f.input :size, collection: %w[Extra-Small Small Medium Large Extra-Large] %>
+                  <%= f.input :description %>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <%= f.button :submit, class: "btn btn-primary" %>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
+      <!-- Delete button -->
+      </div>
       <% end %>
     </ul>
   </div>
