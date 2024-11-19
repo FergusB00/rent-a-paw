@@ -13,39 +13,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="http://localhost:3000/dogs">
-          <img src="" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-                <a class="nav-link mr-2" href="http://localhost:3000/dogs">All dogs</a>
-              </li>
-              <%# <li class="nav-item">
-                <a class="nav-link" href="http://localhost:3000/dogs/new">New dog</a>
-              </li> %>
-                <%# <li class="nav-item dropdown">
-                  <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-                  </div>
-                </li> %>
-                <!--li class="nav-item"-->
-                <!--/li-->
-          </ul>
-        </div>
-      </div>
-    </div>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
 </html>

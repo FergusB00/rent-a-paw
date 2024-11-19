@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  before_action :set_dog, only: [:show]
 
   def index
     @dogs = Dog.all
@@ -6,7 +7,15 @@ class DogsController < ApplicationController
   end
 
   def show
-    @dog = Dog.find(params[:id])
     @booking = Booking.new
   end
+
+
+  private
+
+  def set_dog
+    @dog = Dog.find(params[:id])
+  end
+
+
 end
