@@ -21,7 +21,7 @@ adam = User.create(
   password: "password"
 )
 
-ellie = User.create(
+ellie = User.create!(
   first_name: "Ellie",
   last_name: "Stevens",
   email: "ellie@stevens.com",
