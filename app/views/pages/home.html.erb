@@ -1,29 +1,31 @@
 <div class="body">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "dog_1.jpg", alt: "Dog 1", class: "d-block w-50"%>
+          <div class="carousel-item active">
+        <%= image_tag "dog_1.jpg", alt: "Dog 1", class: "d-block w-100"%>
       </div>
       <div class="carousel-item">
-        <%= image_tag "dog_2.jpg", alt: "Dog 2", class: "d-block w-50"%>
+        <%= image_tag "dog_2.jpg", alt: "Dog 2", class: "d-block w-100"%>
       </div>
       <div class="carousel-item">
-        <%= image_tag "dog_3.jpg", alt: "Dog 3", class: "d-block w-50"%>
+        <%= image_tag "dog_3.jpg", alt: "Dog 3", class: "d-block w-100"%>
       </div>
       <div class="carousel-item">
-        <%= image_tag "dog_4.jpg", alt: "Dog 4", class: "d-block w-50"%>
+        <%= image_tag "dog_4.jpg", alt: "Dog 4", class: "d-block w-100"%>
       </div>
       <div class="carousel-item">
-        <%= image_tag "dog_5.jpg", alt: "Dog 5", class: "d-block w-50"%>
+        <%= image_tag "dog_5.jpg", alt: "Dog 5", class: "d-block w-100"%>
       </div>
     </div>
   </div>
 
-  <!-- Our simple navbar -->
+  <!-- A simple navbar -->
   <nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-around">
-      <a href="#" class="btn btn-outline-primary">Add</a>
-      <a href="#" class="btn btn-outline-primary">Rent</a>
+      <%= link_to 'Add', profile_path, class: 'btn btn-outline-primary' %>
+      <%= link_to 'Rent', dogs_path, class: 'btn btn-outline-primary' %>
+
     </div>
   </nav>
+</div>
 </div>
