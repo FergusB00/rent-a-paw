@@ -4,21 +4,24 @@
       <div class="row row-cols-2 row-cols-md-3 g-4">
         <div class="list-group">
           <% @dogs.each do |dog| %>
-              <div class="card-body">
+              <div class="card-body" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="🐾 Hi! I'm <%=dog.name%>🐶 I'm <%=dog.age%> years old and a size <%=dog.size%> 🐾">
                 <%= link_to dog_path(dog) do %>
-                  <div class="card clickable-card bg-light border-0">
-                    <% if dog.photo %>
-                      <%= image_tag dog.photo, alt: "dog photo", class: "dog-photos" %>
-                    <% else %>
-                      <%= image_tag("dog_4.jpg") %>
+                    <div class="card clickable-card bg-light border-0">
+                      <% if dog.photo %>
+                        <%= image_tag dog.photo, alt: "dog photo", class: "dog-photos" %>
+                      <% else %>
+                        <%= image_tag("dog_4.jpg") %>
+                      <% end %>
+                    </div>
                     <% end %>
-                  </div>
-                </div>
-                <% end %>
               </div>
-          <% end %>
+             <% end %>
         </div>
       </div>
+    </div>
+  </div>
       <div class="text-center mt-4">
         <button class="btn btn-outline-warning me-2">&#9664;</button>
         <button class="btn btn-outline-warning">&#9654;</button>
