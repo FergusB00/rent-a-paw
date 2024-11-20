@@ -1,0 +1,60 @@
+
+// Container for all dog cards
+.dog-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+// Individual dog card
+.dog-card {
+  flex: 1 1 calc(25% - 20px);
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+// Dog card image
+.dog-photos {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+// Button styles
+.btn-success {
+  background-color: #61b292;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #519a7d;
+}
+
+.btn-danger {
+  background-color: #e47a6b;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #d36655;
+}
+
+@media (max-width: 992px) {
+  .dog-card {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .dog-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .dog-card {
+    flex: 1 1 100%;
+  }
+}
