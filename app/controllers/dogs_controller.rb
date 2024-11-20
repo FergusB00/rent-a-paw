@@ -15,10 +15,10 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     @dog.user = current_user
-    p "valid - #{@dog.valid?}"
+    # p "valid - #{@dog.valid?}"
     respond_to do |format|
       if @dog.save
-        p "here"
+        # p "here"
         format.html { redirect_to profile_path, notice: "Dog successfully added" }
         format.json
       else
@@ -48,7 +48,7 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:breed, :age, :price, :size, :description, :name)
+    params.require(:dog).permit(:breed, :age, :price, :size, :description, :name, :photo)
   end
 
 end
