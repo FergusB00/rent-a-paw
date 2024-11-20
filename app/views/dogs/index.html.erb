@@ -7,10 +7,10 @@
               <div class="card-body">
                 <%= link_to dog_path(dog) do %>
                   <div class="card clickable-card bg-light border-0">
-                    <% if dog.photo %>
-                      <%= image_tag dog.photo, alt: "dog photo", class: "dog-photos" %>
+                    <% if dog.photo.attached? %>
+                      <%= cl_image_tag dog.photo.key, alt: "dog photo", class: "dog-photos" %>
                     <% else %>
-                      <%= image_tag("dog_4.jpg") %>
+                      <%= image_tag dog.image_url, alt: "dog photo", class: "dog-photos" %>
                     <% end %>
                   </div>
                 </div>

@@ -1,11 +1,15 @@
 <div class="d-flex align-items-center justify-content-between mb-3">
         <!-- Dog Name and photo -->
-        <%= link_to dog.name, dog_path(dog) %>
-        <% if dog.photo.attached? %>
-          <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <%= image_tag "dog_4.jpg", alt: "dog photo", class: "dog-photos" %>
-        <% end %>
+        <%= link_to dog_path(dog) do %>
+          <div class="card clickable-card bg-light border-0">
+            <%= dog.name %>
+            <% if dog.photo.attached? %>
+              <%= cl_image_tag dog.photo.key, alt: "dog photo", class: "dog-photos" %>
+            <% else %>
+              <%= image_tag dog.image_url, alt: "dog photo", class: "dog-photos" %>
+            <% end %>
+          <% end %>
+        </div>
 
         <!-- Edit Button -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dog<%= dog.id %>"><%= "Edit #{dog.name}'s info" %></button>
