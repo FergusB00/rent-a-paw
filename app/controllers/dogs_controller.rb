@@ -8,6 +8,7 @@ class DogsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def create
@@ -48,6 +49,5 @@ class DogsController < ApplicationController
   def dog_params
     params.require(:dog).permit(:breed, :age, :price, :size, :description, :name)
   end
-
 
 end
