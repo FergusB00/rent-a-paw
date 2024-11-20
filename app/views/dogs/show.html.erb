@@ -1,13 +1,20 @@
 <h1><%= "Say hello to #{@dog.name}" %></h1>
 
-<h3><%= @dog.description %></h3>
-<h3>£<%= @dog.price %></h3>
-<h3>This dog is a <%= @dog.breed %></h3>
-<h3>This dog is <%= @dog.age %> years old</h3>
-<h3><%= @dog.size %> sized</h3>
+<div>
+  <div class="d-inline-flex">
+  <h3><%= "Name: #{@dog.name}" %></h3>
+  <h3><%= "Age: #{@dog.age}" %></h3>
+  <h3><%= "Size: #{@dog.size}" %></h3>
+  <h3><%= "Breed: #{@dog.breed}" %></h3>
+  </div>
+
+  <div>
+  <h3><%= "Description: #{@dog.description}" %></h3>
+</div>
 
 <div data-controller="toggle" class="mt-5">
   <button data-action="click->toggle#fire" class="btn btn-outline-primary">Book this Dog 🐶</button>
+
 
   <div data-toggle-target="togglableElement" class="d-none">
     <%= render "bookingform", booking: @booking, dog: @dog%>
