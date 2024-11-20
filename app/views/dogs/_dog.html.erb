@@ -1,25 +1,24 @@
 <div class="dog-card-container">
   <% @dogs.each do |dog| %>
     <div class="dog-card">
-      <div class="card custom-card text-center bg-light border-0">
-        <div class="card-body">
+      <div class="dog-card-image">
 
-        <!-- Dog Name and photo -->
-          <%= link_to dog_path(dog) do %>
-            <%= dog.name %>
-            <% if dog.photo.attached? %>
-              <%= cl_image_tag dog.photo.key, alt: "dog photo", class: "dog-photos w-100 rounded" %>
-            <% else %>
-              <%= image_tag dog.image_url, alt: "dog photo", class: "dog-photos w-100 rounded" %>
-            <% end %>
+      <!-- Dog Name and photo -->
+        <%= link_to dog_path(dog) do %>
+          <% if dog.photo.attached? %>
+            <%= cl_image_tag dog.photo.key, alt: "dog photo", class: "dog-photos w-100 rounded" %>
+          <% else %>
+            <%= image_tag dog.image_url, alt: "dog photo", class: "dog-photos w-100 rounded" %>
           <% end %>
-        </div>
+        <% end %>
+      </div>
 
-        <!-- Buttons -->
-        <div class="card-footer bg-white d-flex justify-content-around">
 
+      <div class="dog-card-footer">
+        <h5 class="dog-name"><%= dog.name %></h5>
+        <div class="dog-card-actions">
           <!-- Edit Button -->
-          <button type="button" class="btn btn-success btn-sm px-4" data-bs-toggle="modal" data-bs-target="#dog<%= dog.id %>"><%= "Edit #{dog.name}'s info" %></button>
+          <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#dog<%= dog.id %>"><%= "Edit #{dog.name}'s info" %></button>
 
           <!-- Edit Button Modal -->
           <div class="modal fade" id="dog<%= dog.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,12 +49,13 @@
 
           <!-- Delete Button -->
           <button> <%= link_to "Delete", dog_path(dog),
-          class: "btn btn-danger btn-sm px-4",
+          class: "btn btn-danger btn-sm",
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
           %> </button>
         </div>
-
       </div>
+
+
     </div>
   <% end %>
 </div>
