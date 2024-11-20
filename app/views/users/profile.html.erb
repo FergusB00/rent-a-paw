@@ -1,5 +1,5 @@
 
-
+<!-- Welcome message to user -->
 <div class="container" data-controller="insert-in-list">
   <div class="dog-heading">
     <h1><%= "Hi #{@user.first_name}" %></h1>
@@ -10,6 +10,7 @@
     <% end %>
   </div>
 
+<!-- Dogs currently listed for hire -->
   <div class="dog-cards">
     <div class="list-group" data-insert-in-list-target="items">
       <% @user.dogs.each do |dog| %>
@@ -18,6 +19,7 @@
     </div>
   </div>
 
+<!-- Add a new dog -->
   <div data-controller="toggle" class="mb-3 mt-4">
     <button data-action="click->toggle#fire" class="btn btn-outline-primary">Add a new dog:</button>
     <div data-toggle-target="togglableElement" class="d-none" id="dogs" >
@@ -25,6 +27,7 @@
     </div>
   </div>
 
+<!-- Bookings welcome message -->
   <div class="booking-heading">
     <% if @user.bookings.any? %>
       <h3><%= "Here are your current bookings:" %>
@@ -33,6 +36,7 @@
     <% end %>
   </div>
 
+<!-- User's current bookings -->
   <div class="booking-cards">
     <ul class="list-group">
       <% @user.bookings.each do |booking| %>
@@ -40,5 +44,7 @@
       <% end %>
     </ul>
   </div>
+
+
 
 </div>
