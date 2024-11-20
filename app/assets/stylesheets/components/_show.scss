@@ -83,33 +83,44 @@
   width: 50px;
   height: 50px;
   position: relative;
+  color: #f4c542;
+  font-size: 40px;
 }
 
-.back-icon .line {
-  width: 5px;
-  height: 30px;
-  background-color: #F4A261;
-  border-radius: 2px;
-  position: absolute;
-  right: 10px;
-}
+// .back-icon:hover {
 
-.back-icon .triangle {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 20px solid #F4A261;
-  position: absolute;
-  right: 20px;
-}
+// }
 
-.back-link .line,
-.back-link .triangle {
+.back-link {
+  display: inline-block;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.back-link:hover .line,
-.back-link:hover .triangle {
+.back-link:hover {
+  text-decoration: none;
   transform: scale(1.1);
 }
+// .back-icon .line {
+//   width: 5px;
+//   height: 30px;
+//   background-color: #F4A261;
+//   border-radius: 2px;
+//   position: absolute;
+//   right: 10px;
+// }
+
+// .back-icon .triangle {
+//   width: 0;
+//   height: 0;
+//   border-top: 15px solid transparent;
+//   border-bottom: 15px solid transparent;
+//   border-right: 20px solid #F4A261;
+//   position: absolute;
+//   right: 20px;
+// }
+
+// .back-link .line,
+// .back-link .triangle {
+//   transition: 0.3s;
+// }
