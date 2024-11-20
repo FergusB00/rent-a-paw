@@ -10,12 +10,10 @@ class DogsController < ApplicationController
     @booking = Booking.new
   end
 
-
   private
 
   def set_dog
     @dog = Dog.find(params[:id])
   end
-
 
 end
