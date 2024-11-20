@@ -1,1 +1,142 @@
 // Specific CSS for your home-page
+// From James via on 19/11
+
+// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+
+// Color Variables
+$primary-color: #567d96;
+$secondary-color: #f3c26b;
+$text-color: #333;
+$white: #ffffff;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$overlay-color: rgba(0, 0, 0, 0.5);
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: $primary-color;
+}
+
+// Top Navigation
+.top-nav {
+  background-color: $primary-color;
+  font: life-savers;
+  color: #primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+
+  h1 {
+    font-size: 1em;
+    background-color:#2a9d8f;
+  }
+
+  .paw-icon {
+    font-size: 1em;
+  }
+
+  .login-link {
+    color: $white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+// Carousel
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+
+  .carousel {
+    display: flex;
+    //justify-content:center; /* Horizontal centering */
+    transition: transform 0.5s ease;
+    //align-items: center;     /* Vertical centering */
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $overlay-color;
+    color: $white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+  }
+}
+
+// Welcome Message
+.welcome-message {
+  background-color: $secondary-color;
+  padding: 20px;
+  text-align: center;
+  color: $text-color;
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
+
+// Bottom Navigation
+.bottom-nav {
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -1px 5px $shadow-color;
+
+  .nav-button {
+    color: $secondary-color;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}

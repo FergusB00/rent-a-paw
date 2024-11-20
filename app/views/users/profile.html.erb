@@ -1,0 +1,44 @@
+
+
+<div class="container" data-controller="insert-in-list">
+  <div class="dog-heading">
+    <h1><%= "Hi #{@user.first_name}" %></h1>
+    <% if @user.dogs.any? %>
+      <h3><%= "Here are your dogs listed for hire:" %>
+    <% else %>
+      <h3><%= "You currently have no dogs listed for hire." %>
+    <% end %>
+  </div>
+
+  <div class="dog-cards">
+    <div class="list-group" data-insert-in-list-target="items">
+      <% @user.dogs.each do |dog| %>
+        <%= render "dogs/dog", dog: dog %>
+      <% end %>
+    </div>
+  </div>
+
+  <div data-controller="toggle" class="mb-3 mt-4">
+    <button data-action="click->toggle#fire" class="btn btn-outline-primary">Add a new dog:</button>
+    <div data-toggle-target="togglableElement" class="d-none" id="dogs" >
+      <%= render "dogs/form", dog: @dog %>
+    </div>
+  </div>
+
+  <div class="booking-heading">
+    <% if @user.bookings.any? %>
+      <h3><%= "Here are your current bookings:" %>
+    <% else %>
+      <h3><%= "You currently have no bookings." %>
+    <% end %>
+  </div>
+
+  <div class="booking-cards">
+    <ul class="list-group">
+      <% @user.bookings.each do |booking| %>
+        <li class="list-group-item"><%= "#{booking.start_date} - #{booking.end_date}" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
