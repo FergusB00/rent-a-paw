@@ -1,6 +1,7 @@
 class DogsController < ApplicationController
   require 'json'
   before_action :set_dog, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @dogs = Dog.all
