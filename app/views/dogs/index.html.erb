@@ -7,8 +7,13 @@
               <div class="card-body">
                 <%= link_to dog_path(dog) do %>
                   <div class="card clickable-card bg-light border-0">
-                    <%= image_tag dog.photo, alt: "dog photo", class: "dog-photos" %>
+                    <% if dog.photo %>
+                      <%= image_tag dog.photo, alt: "dog photo", class: "dog-photos" %>
+                    <% else %>
+                      <%= image_tag("dog_4.jpg") %>
+                    <% end %>
                   </div>
+                </div>
                 <% end %>
               </div>
           <% end %>
