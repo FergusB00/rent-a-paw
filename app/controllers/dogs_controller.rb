@@ -3,9 +3,11 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+    @dog = Dog.new
   end
 
   def show
+    @booking = Booking.new
   end
 
   private
