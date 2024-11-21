@@ -4,7 +4,11 @@ class DogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @dogs = Dog.all
+    if params[:query].present?
+      @dogs = Dog.search_by_breed_and_address(params[:query])
+    else
+      @dogs = Dog.all
+    end
     @dog = Dog.new
     @markers = @dogs.geocoded.map do |dog|
       {
