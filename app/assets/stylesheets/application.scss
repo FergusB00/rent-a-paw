@@ -9,10 +9,14 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
+@import "pages/index
+  
+// Geomap
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 
 // Had the write some code in the Application, it makes my life easier
 .paw-footer {
   background-color: #234755;
   color: #3C7A93;
 }
+
