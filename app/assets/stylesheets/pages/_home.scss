@@ -1,14 +1,8 @@
-// Specific CSS for your home-page
-// From James via on 19/11
-
-// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
-
-// Color Variables
-$primary-color: #567d96;
-$secondary-color: #f3c26b;
+// Variables for consistent styling
+$primary-color: #e9c46a;
+$secondary-color: #567d96;
 $text-color: #333;
 $white: #ffffff;
-$shadow-color: rgba(0, 0, 0, 0.1);
 $overlay-color: rgba(0, 0, 0, 0.5);
 
 // Reset
@@ -27,74 +21,43 @@ $overlay-color: rgba(0, 0, 0, 0.5);
   background-color: $primary-color;
 }
 
-// Top Navigation
-.top-nav {
-  background-color: $primary-color;
-  font: life-savers;
-  color: #primary;
+// Added to debug missing navbar
+.body {
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-
-  h1 {
-    font-size: 1em;
-    background-color:#2a9d8f;
-  }
-
-  .paw-icon {
-    font-size: 1em;
-  }
-
-  .login-link {
-    color: $white;
-    text-decoration: none;
-    font-weight: bold;
-  }
 }
 
 // Carousel
 .carousel-container {
   position: relative;
-  width: 100%;
-  height: 250px;
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 
-  .carousel {
+  .carousel-inner {
     display: flex;
-    //justify-content:center; /* Horizontal centering */
-    transition: transform 0.5s ease;
-    //align-items: center;     /* Vertical centering */
-  }
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Match container height */
+    width: 100%; /* Match container width */
 
-  .carousel-item {
-    min-width: 100%;
-    transition: opacity 0.5s ease;
+    .carousel-item {
+      flex: 0 0 100%; /* Each image takes full width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: $overlay-color;
-    color: $white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1.5em;
-
-    &.prev {
-      left: 10px;
-    }
-
-    &.next {
-      right: 10px;
+      img {
+        width: 80%; /* Adjust for consistent image size */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 90%; /* Prevent overflow vertically */
+        object-fit: cover; /* Ensure consistent cropping */
+      }
     }
   }
 }
@@ -118,12 +81,20 @@ $overlay-color: rgba(0, 0, 0, 0.5);
 }
 
 // Bottom Navigation
+// Added to debug missing navbar (JM)
 .bottom-nav {
-  background-color: $secondary-color;
+    position: fixed; /* Ensure it's pinned to the bottom */
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+ }
+
+.bottom-nav {
+  background-color: $primary-color;
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
-  box-shadow: 0 -1px 5px $shadow-color;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
 
   .nav-button {
     color: $secondary-color;

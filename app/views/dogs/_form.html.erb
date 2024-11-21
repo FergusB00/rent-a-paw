@@ -5,5 +5,6 @@
   <%= f.input :price %>
   <%= f.input :size, collection: %w[Extra-Small Small Medium Large Extra-Large] %>
   <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>
