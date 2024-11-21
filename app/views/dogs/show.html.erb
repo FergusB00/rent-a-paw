@@ -12,6 +12,7 @@
     <!-- Information Section -->
     <div class="info-section">
       <p><strong>Name: </strong><%= @dog.name %></p>
+      <p><strong>Breed: </strong><%= @dog.breed %></p>
       <p><strong>Age: </strong><%= @dog.age %></p>
       <p><strong>Size: </strong><%= @dog.size %></p>
       <p><strong>Description: </strong><%= @dog.description %></p>
@@ -38,5 +39,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
