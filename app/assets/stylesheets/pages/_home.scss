@@ -1,113 +1,109 @@
-// Variables for consistent styling
-$primary-color: #e9c46a;
-$secondary-color: #567d96;
-$text-color: #333;
-$white: #ffffff;
-$overlay-color: rgba(0, 0, 0, 0.5);
-
-// Reset
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-.body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  background-color: $primary-color;
-}
-
-// Added to debug missing navbar
-.body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-// Carousel
-.carousel-container {
-  position: relative;
-  width: 100vw; /* Full screen width */
-  height: 100vh; /* Full screen height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+  width: 100%; /* Make it full width */
+  max-width: 300px; /* You can still control the max width */
+  height: auto; /* Let the height be dynamic */
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  margin: 0 auto; /* Center the container horizontally on the page */
+}
 
-  .carousel-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Match container height */
-    width: 100%; /* Match container width */
+.header {
+  background-color: $secondary-color;
+  color: $white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    .carousel-item {
-      flex: 0 0 100%; /* Each image takes full width */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
 
-      img {
-        width: 80%; /* Adjust for consistent image size */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 90%; /* Prevent overflow vertically */
-        object-fit: cover; /* Ensure consistent cropping */
-      }
+    .paw {
+      color: $primary-color;
+      font-weight: bold;
     }
   }
-}
 
-// Welcome Message
-.welcome-message {
-  background-color: $secondary-color;
-  padding: 20px;
-  text-align: center;
-  color: $text-color;
-
-  p {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-  }
-
-  h2 {
-    font-size: 1.5em;
-    font-weight: bold;
+  .profile-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
   }
 }
 
-// Bottom Navigation
-// Added to debug missing navbar (JM)
-.bottom-nav {
-    position: fixed; /* Ensure it's pinned to the bottom */
-    bottom: 0;
-    width: 100%;
-    z-index: 10;
- }
+.image-section img {
+  width: 100%;
+  height: auto;
+}
 
-.bottom-nav {
+.content {
+  padding: 15px;
   background-color: $primary-color;
+  color: $text-color;
+  text-align: center;
+  text-size-adjust: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*.footer {
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  padding: 10px;
+  background-color: $white;
+  border-top: 1px solid #e0e0e0;
 
-  .nav-button {
+  /* .add-button, .rent-button {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /*.add-button {
+    background-color: lighten($primary-color, 30%);
+    color: darken($primary-color, 30%);
+  }
+
+  .rent-button {
+    background-color: $primary-color;
     color: $secondary-color;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px;
-    border: 1px solid $primary-color;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  }
+} */
 
-    &:hover {
-      background-color: $primary-color;
-      color: $white;
-    }
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .container {
+    width: 90%; /* Make the container take up more space on smaller screens */
+    max-width: none; /* Remove max width restriction */
+    margin-top: 480px;
+    position: fixed;
+    top: 20px; /* Adjust this to control how far down from the top of the viewport it should be */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Ensure perfect centering */
+    z-index: 10; /* Keep it above the carousel */
+  }
+
+  .header h1 {
+    font-size: 20px; /* Reduce the size of the title on smaller screens */
+  }
+
+  .content {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .footer {
+    padding: 8px 0; /* Reduce padding on smaller screens */
   }
 }
