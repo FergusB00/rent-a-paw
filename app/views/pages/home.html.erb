@@ -1,5 +1,5 @@
 <div class="body">
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner">
           <div class="carousel-item active">
         <%= image_tag "dog_1.jpg", alt: "Dog 1", class: "d-block w-100"%>
@@ -22,10 +22,8 @@
   <!-- A simple navbar -->
   <nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-around">
-      <%= link_to 'Add', profile_path, class: 'btn btn-outline-primary' %>
-      <%= link_to 'Rent', dogs_path, class: 'btn btn-outline-primary' %>
-
+      <%= link_to 'Add', profile_path, class: "btn btn-outline-primary", role: "button"%>
+      <%= link_to 'Rent', dogs_path, class: "btn btn-outline-primary", role: "button"%>
     </div>
   </nav>
-</div>
 </div>
