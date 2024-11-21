@@ -52,6 +52,50 @@ barktholomew = Dog.create(
   user_id: users.sample.id
 )
 
+countdroolula = Dog.create(
+  name: "Count Droolula",
+  breed: "Pitbull",
+  image_url: "https://cdn.shopify.com/s/files/1/1831/0741/files/pettsie-awesome-facts-about-German-Shepherds.jpg?v=1623746710",
+  age: 2,
+  price: rand(20..100),
+  size: "Medium",
+  description: "Say hello to our magnificent German Shepherd, the ideal partner for those seeking loyalty, intelligence, and energy wrapped into one incredible canine. With their sleek coat, striking features, and alert demeanor, German Shepherds are renowned for their versatility and loving nature.",
+  user_id: users.sample.id
+)
+
+barkobama = Dog.create(
+  name: "Bark Obama",
+  breed: "Black Labrador",
+  image_url: "https://cdn.shopify.com/s/files/1/1831/0741/files/pettsie-awesome-facts-about-German-Shepherds.jpg?v=1623746710",
+  age: 8,
+  price: rand(20..100),
+  size: "Large",
+  description: "Say hello to our magnificent German Shepherd, the ideal partner for those seeking loyalty, intelligence, and energy wrapped into one incredible canine. With their sleek coat, striking features, and alert demeanor, German Shepherds are renowned for their versatility and loving nature.",
+  user_id: users.sample.id
+)
+
+ladydogiva = Dog.create(
+  name: "Lady Dogiva",
+  breed: "Poodle",
+  image_url: "https://cdn.shopify.com/s/files/1/1831/0741/files/pettsie-awesome-facts-about-German-Shepherds.jpg?v=1623746710",
+  age: 2,
+  price: rand(20..100),
+  size: "Small",
+  description: "Say hello to our magnificent German Shepherd, the ideal partner for those seeking loyalty, intelligence, and energy wrapped into one incredible canine. With their sleek coat, striking features, and alert demeanor, German Shepherds are renowned for their versatility and loving nature.",
+  user_id: users.sample.id
+)
+
+hairypawter = Dog.create(
+  name: "Hairy Paw-ter",
+  breed: "Irish Wolfhound",
+  image_url: "https://cdn.shopify.com/s/files/1/1831/0741/files/pettsie-awesome-facts-about-German-Shepherds.jpg?v=1623746710",
+  age: 1,
+  price: rand(20..100),
+  size: "Large",
+  description: "Say hello to our magnificent German Shepherd, the ideal partner for those seeking loyalty, intelligence, and energy wrapped into one incredible canine. With their sleek coat, striking features, and alert demeanor, German Shepherds are renowned for their versatility and loving nature.",
+  user_id: users.sample.id
+)
+
 # Booking.create(
 #   start_date: Time.now,
 #   end_date: (Time.now + 3),
