@@ -4,8 +4,8 @@ class Dog < ApplicationRecord
   geocoded_by :address
 
   include PgSearch::Model
-  pg_search_scope :search_by_breed_and_city,
-  against: [ :breed, :city ],
+  pg_search_scope :search_by_breed_and_address,
+  against: [ :breed, :address ],
   using: {
     tsearch: { prefix: true }
   }
