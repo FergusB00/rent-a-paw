@@ -4,6 +4,21 @@
   width: 100%;
 }
 
+.row {
+  margin: 0 auto;
+}
+
+.card-center {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-body {
+  justify-content: center;
+  align-items: center;
+}
+
 .card.clickable-card {
   display: inline-block; // this will need to be changed onces others are added into the seeds
   width: 300px;
@@ -25,8 +40,28 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  justify-content: center;
+  align-items: center;
 }
 
 .bg-warning {
   background-color: #F4A261 !important;
+}
+
+@media (max-width: 992px) {
+  .dog-card {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .dog-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .dog-card {
+    flex: 1 1 100%;
+  }
 }
