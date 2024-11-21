@@ -1,22 +1,42 @@
-<h1><%= "Say hello to #{@dog.name}" %></h1>
+<div class="show-page" data-controller="toggle">
+  <div class="dog-cards">
+    <!-- Photo Section -->
+    <div class="photo-section">
+      <% if @dog.photo.attached? %>
+        <%= cl_image_tag @dog.photo.key, alt: "dog photo", class: "dog-photos" %>
+      <% else %>
+        <%= image_tag @dog.image_url, alt: "dog photo", class: "dog-photos" %>
+      <% end %>
+    </div>
 
-<div>
-  <div class="d-inline-flex">
-  <h3><%= "Name: #{@dog.name}" %></h3>
-  <h3><%= "Age: #{@dog.age}" %></h3>
-  <h3><%= "Size: #{@dog.size}" %></h3>
-  <h3><%= "Breed: #{@dog.breed}" %></h3>
+    <!-- Information Section -->
+    <div class="info-section">
+      <p><strong>Name: </strong><%= @dog.name %></p>
+      <p><strong>Age: </strong><%= @dog.age %></p>
+      <p><strong>Size: </strong><%= @dog.size %></p>
+      <p><strong>Description: </strong><%= @dog.description %></p>
+    </div>
   </div>
 
-  <div>
-  <h3><%= "Description: #{@dog.description}" %></h3>
-</div>
-
-<div data-controller="toggle" class="mt-5">
-  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Book this Dog 🐶</button>
-
-
-  <div data-toggle-target="togglableElement" class="d-none">
-    <%= render "bookingform", booking: @booking, dog: @dog%>
+  <div class="d-flex justify-content-center align-items-center btn-holder">
+    <div>
+      <%= link_to dogs_path, class: "back-link" do %>
+        <i class="fa-solid fa-backward back-icon"></i>
+      <% end %>
+    </div>
+    <div>
+      <div class="badge">
+        <button class="btn checkmark" data-bs-toggle="modal" data-bs-target="#bookingModal">✔</button>
+      </div>
+      <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <%= render "bookingform", booking: @booking, dog: @dog%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

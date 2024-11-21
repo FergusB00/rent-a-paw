@@ -2,13 +2,14 @@
   background-color: #3C7A93; /* Blue color */
   color: white; /* Text color */
   padding: 20px 80px; /* Add vertical padding */
+  justify-content: center;
+  // text-align: center;
 }
 
 .logo-text {
-  font-family: 'YourGoogleFont', sans-serif; /* Use a Google Font if desired */
-  font-size: 36px; /* Adjust font size */
-  font-weight: bold; /* Make it bold */
-  margin: 0; /* Remove default margin */
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .paw-icon {

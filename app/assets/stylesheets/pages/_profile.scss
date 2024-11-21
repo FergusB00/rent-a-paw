@@ -1,0 +1,117 @@
+
+.whole-page {
+  background-color: #F4F1E6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Container for all dog cards
+.dog-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+// Individual dog card
+.dog-card {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background-color: #f8f9fa;
+}
+
+// Photo section of the card
+.dog-card-image {
+  position: relative;
+}
+
+.dog-card-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Footer section with name and buttons
+.dog-card-footer {
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dog-name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+// Button styles
+// Actions (Edit and Delete buttons)
+.dog-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-success {
+  background-color: #2A9D8F;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #519a7d;
+}
+
+.btn-danger {
+  background-color: #E76F51;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #d36655;
+}
+
+.dog-heading,
+.booking-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-dog-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+@media (max-width: 992px) {
+  .dog-card {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .dog-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .dog-card {
+    flex: 1 1 100%;
+  }
+}

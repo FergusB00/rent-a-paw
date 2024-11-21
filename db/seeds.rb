@@ -12,7 +12,7 @@ Booking.destroy_all
 Dog.destroy_all
 User.destroy_all
 
-puts "Creating dogs..."
+puts "Creating users..."
 
 adam = User.create(
   first_name: "Adam",
@@ -28,44 +28,50 @@ ellie = User.create!(
   password: "password"
 )
 
+colin = User.create!(
+  first_name: "Colin",
+  last_name: "Warne",
+  email: "colin@warne.com",
+  password: "password"
+)
+
+alice = User.create!(
+  first_name: "Alice",
+  last_name: "Evans",
+  email: "alice@evans.com",
+  password: "password"
+)
+
 users = User.all
 
-chew_barka = Dog.create(
-  name: "Chew-Barka",
-  breed: "Golden Retriever",
-  photo: "https://d128mjo55rz53e.cloudfront.net/media/images/blog-breed-golden_retriever_1.max-500x500.format-jpeg_xCCvVdQ.jpg",
-  age: 2,
-  price: rand(20.100),
-  size: "Large",
-  description: "Meet our delightful golden retriever, the epitome of loyalty and warmth! With a luxurious golden coat and a heart as golden as its fur, this pup is ideal for any dog lover looking for a day of joy and companionship. Known for their friendly and gentle nature, golden retrievers are fantastic with kids, adults, and even other pets.",
-  user_id: users.sample.id
-)
+puts "Created #{User.count} users."
 
-barktholomew = Dog.create(
-  name: "Barktholomew",
-  breed: "German Shepherd",
-  photo: "https://cdn.shopify.com/s/files/1/1831/0741/files/pettsie-awesome-facts-about-German-Shepherds.jpg?v=1623746710",
-  age: 5,
-  price: rand(20..100),
-  size: "Large",
-  description: "Say hello to our magnificent German Shepherd, the ideal partner for those seeking loyalty, intelligence, and energy wrapped into one incredible canine. With their sleek coat, striking features, and alert demeanor, German Shepherds are renowned for their versatility and loving nature.",
-  user_id: users.sample.id
-)
+puts "Creating dogs..."
 
-# Booking.create(
-#   start_date: Time.now,
-#   end_date: (Time.now + 3),
-#   price: rand(20..100),
-#   user: adam,
-#   dog: chew_barka
-# )
+20.times do
+  Dog.create(
+    name: Faker::Creature::Dog.name,
+    breed: Faker::Creature::Dog.breed,
+    image_url: "landing/dog_4.jpg",
+    age: rand(1..12),
+    price: rand(20..100),
+    size: "Large",
+    description: Faker::Creature::Dog.meme_phrase,
+    user_id: users.sample.id
+  )
+end
 
-# Booking.create(
-#   start_date: Time.now,
-#   end_date: (Time.now + 3),
-#   price: rand(20..100),
-#   user: ellie,
-#   dog: barktholomew
-# )
+dogs = Dog.all
 
-puts "Created #{Dog.count} dogs, #{User.count} users and #{Booking.count} bookings."
+puts "Created #{Dog.count} dogs."
+
+8.times do
+  Booking.create(
+    start_date: (Time.now + rand(0..2).days),
+    end_date: (Time.now + rand(2..5).days),
+    user: users.sample,
+    dog: dogs.sample
+  )
+end
+
+puts "Created #{Booking.count} bookings."
