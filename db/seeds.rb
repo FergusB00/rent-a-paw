@@ -52,19 +52,45 @@ puts "Created #{User.count} users."
 puts "Creating dogs..."
 
 dog_types = [
-  { type: "Labrador", image_name: "https://cdn.britannica.com/82/232782-050-8062ACFA/Black-labrador-retriever-dog.jpg" },
-  { type: "Cocker Spaniel", image_name: "https://cdn.britannica.com/35/38935-050-E4DE59E9/Cocker-spaniel.jpg" },
-  { type: "Dachshund", image_name: "https://cdn.britannica.com/81/12481-050-6FF2A457/dachshund-coat-hair.jpg" },
-  { type: "German Shepherd", image_name: "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg" },
-  { type: "Jack Russell", image_name: "https://cdn.britannica.com/32/8132-050-FD658B0B/terrier-Parson-Jack-Russell.jpg" },
-  { type: "Chihuahua", image_name: "https://cdn.britannica.com/44/233244-050-A65D4571/Chihuahua-dog.jpg" },
-  { type: "Collie", image_name: "https://cdn.britannica.com/25/234625-050-6070814C/Border-Collie-dog.jpg" },
-  { type: "Greyhound", image_name: "https://apupabove.com/cdn/shop/articles/Italian_Greyhound_Basic_Care_Guide_1200x1200.webp?v=1701708859" },
-  { type: "Husky", image_name: "https://cdn.britannica.com/84/232784-050-1769B477/Siberian-Husky-dog.jpg" },
-  { type: "Schnauzer", image_name: "https://cdn.britannica.com/46/79546-050-1B8F54F4/Miniature-schnauzer.jpg" },
-  { type: "Dalmatian", image_name: "https://cdn.britannica.com/47/236047-050-F06BFC5E/Dalmatian-dog.jpg" },
-  { type: "Labrador", image_name: "https://cdn.britannica.com/68/28268-004-53E03392.jpg" },
-  { type: "Labrador", image_name: "https://media.graphassets.com/resize=height:360,width:1280/output=format:webp/AX2WeBpHQImdIope0Vlk?width=1280" }
+  { type: "Labrador",
+    image_name: "https://cdn.britannica.com/82/232782-050-8062ACFA/Black-labrador-retriever-dog.jpg",
+    city: "London" },
+  { type: "Cocker Spaniel",
+    image_name: "https://cdn.britannica.com/35/38935-050-E4DE59E9/Cocker-spaniel.jpg",
+    city: "Nottingham" },
+  { type: "Dachshund",
+    image_name: "https://cdn.britannica.com/81/12481-050-6FF2A457/dachshund-coat-hair.jpg",
+    city: "Leeds" },
+  { type: "German Shepherd",
+    image_name: "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg",
+    city: "Norwich" },
+  { type: "Jack Russell",
+    image_name: "https://cdn.britannica.com/32/8132-050-FD658B0B/terrier-Parson-Jack-Russell.jpg",
+    city: "Birmingham" },
+  { type: "Chihuahua",
+    image_name: "https://cdn.britannica.com/44/233244-050-A65D4571/Chihuahua-dog.jpg",
+    city: "London" },
+  { type: "Collie",
+    image_name: "https://cdn.britannica.com/25/234625-050-6070814C/Border-Collie-dog.jpg",
+    city: "Birmingham" },
+  { type: "Greyhound",
+    image_name: "https://apupabove.com/cdn/shop/articles/Italian_Greyhound_Basic_Care_Guide_1200x1200.webp?v=1701708859",
+    city: "London" },
+  { type: "Husky",
+    image_name: "https://cdn.britannica.com/84/232784-050-1769B477/Siberian-Husky-dog.jpg",
+    city: "Leeds" },
+  { type: "Schnauzer",
+    image_name: "https://cdn.britannica.com/46/79546-050-1B8F54F4/Miniature-schnauzer.jpg",
+    city: "Norwich" },
+  { type: "Dalmatian",
+    image_name: "https://cdn.britannica.com/47/236047-050-F06BFC5E/Dalmatian-dog.jpg",
+    city: "Newcastle" },
+  { type: "Labrador",
+    image_name: "https://cdn.britannica.com/68/28268-004-53E03392.jpg",
+    city: "Manchester" },
+  { type: "Labrador",
+    image_name: "https://media.graphassets.com/resize=height:360,width:1280/output=format:webp/AX2WeBpHQImdIope0Vlk?width=1280",
+    city: "Newcastle" }
 ]
 
 dog_types.each do |dog|
@@ -76,7 +102,8 @@ dog_types.each do |dog|
     price: rand(20..100),
     size: "Large",
     description: Faker::Creature::Dog.meme_phrase,
-    user_id: users.sample.id
+    user_id: users.sample.id,
+    address: dog[:city]
   )
 end
 

@@ -1,41 +1,7 @@
-.container {
-  width: 100%; /* Make it full width */
-  max-width: 300px; /* You can still control the max width */
-  height: auto; /* Let the height be dynamic */
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: $white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center the content vertically */
-  margin: 0 auto; /* Center the container horizontally on the page */
-}
-
-.header {
-  background-color: $secondary-color;
-  color: $white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-left: 10px;
-
-    .paw {
-      color: $primary-color;
-      font-weight: bold;
-    }
-  }
-
-  .profile-icon img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-  }
+.profile-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .image-section img {
@@ -55,46 +21,8 @@
   justify-content: center;
 }
 
-/*.footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  background-color: $white;
-  border-top: 1px solid #e0e0e0;
-
-  /* .add-button, .rent-button {
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-  }
-
-  /*.add-button {
-    background-color: lighten($primary-color, 30%);
-    color: darken($primary-color, 30%);
-  }
-
-  .rent-button {
-    background-color: $primary-color;
-    color: $secondary-color;
-  }
-} */
-
 /* Mobile-specific adjustments */
 @media (max-width: 600px) {
-  .container {
-    width: 90%; /* Make the container take up more space on smaller screens */
-    max-width: none; /* Remove max width restriction */
-    margin-top: 480px;
-    position: fixed;
-    top: 20px; /* Adjust this to control how far down from the top of the viewport it should be */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Ensure perfect centering */
-    z-index: 10; /* Keep it above the carousel */
-  }
-
   .header h1 {
     font-size: 20px; /* Reduce the size of the title on smaller screens */
   }

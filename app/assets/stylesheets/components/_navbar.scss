@@ -1,12 +1,36 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: #F4A261;
+.bg-light {
+  background-color: #3C7A93 !important;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.profile-pic {
+  width: 35px; /* Set the desired size */
+  height: 35px; /* Same as width for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image scales properly within the circle */
+  border: 2px solid #ccc; /* Optional: Adds a border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.rent-a-paw-title {
+  text-decoration: none;
+  font-size: x-large;
+  transition: 0.3s;
+  font-family: Delius Swash Caps;
+  color: white;
+}
+
+.rent-a-paw-title:hover {
+  transform: scale(1.1);
+}
+
+.nvbr-drop-style {
+  text-decoration: none;
+  font-size: medium;
+  transition: 0.3s;
+  font-family: Delius Swash Caps;
+  color: white;
+}
+
+.nvbr-drop {
+  margin-left: 15px;
 }
