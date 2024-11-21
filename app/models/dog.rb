@@ -3,6 +3,13 @@ class Dog < ApplicationRecord
   has_one_attached :photo
   geocoded_by :address
 
+  include PgSearch::Model
+  pg_search_scope :search_by_breed_and_city,
+  against: [ :breed, :city ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   validates :name, presence: true
   validates :breed, presence: true
   validates :age, presence: true

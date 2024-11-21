@@ -80,21 +80,6 @@ dog_types.each do |dog|
   )
 end
 
-# 16.times do
-#   Dog.create(
-#     name: Faker::Creature::Dog.name,
-#     breed: Faker::Creature::Dog.breed,
-#     image_url: "landing/dog_4.jpg",
-#     age: rand(1..12),
-#     price: rand(20..100),
-#     size: "Large",
-#     description: Faker::Creature::Dog.meme_phrase,
-#     user_id: users.sample.id
-#   )
-# end
-
-
-
 dogs = Dog.all
 
 puts "Created #{Dog.count} dogs."
