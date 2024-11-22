@@ -3,11 +3,11 @@
 <div class="whole-page-profile">
   <div class="container" data-controller="insert-in-list">
     <div class="dog-heading">
-      <h1><%= "Hi #{@user.first_name}" %></h1>
+      <h1 class="profile-main-text"><%= "Hi #{@user.first_name}" %></h1>
       <% if @user.dogs.any? %>
-        <h3><%= "Here are your dogs listed for hire:" %>
+        <h3 class="profile-main-text"><%= "Here are your dogs listed for hire:" %></h3>
       <% else %>
-        <h3><%= "You currently have no dogs listed for hire." %>
+        <h3 class="profile-main-text"><%= "You currently have no dogs listed for hire." %></h3>
       <% end %>
     </div>
 
@@ -20,7 +20,7 @@
 
     <!-- Add a new dog -->
     <div data-controller="toggle" class="add-dog-button mb-3 mt-4">
-      <button data-action="click->toggle#fire" class="btn btn-outline-primary add-dog-btn">Add a new dog:</button>
+      <button data-action="click->toggle#fire" class="btn btn-outline-primary add-dog-btn profile-main-text">Add a new dog:</button>
       <div data-toggle-target="togglableElement" class="d-none" id="dogs" >
         <%= render "dogs/form", dog: @dog %>
       </div>
@@ -29,9 +29,9 @@
     <!-- Bookings welcome message -->
     <div class="booking-heading">
       <% if @user.bookings.any? %>
-        <h3><%= "Here are your current bookings:" %>
+        <h3 class="profile-main-text"><%= "Here are your current bookings:" %></h3>
       <% else %>
-        <h3><%= "You currently have no bookings." %>
+        <h3 class="profile-main-text"><%= "You currently have no bookings." %></h3>
       <% end %>
     </div>
 
@@ -46,16 +46,13 @@
             </span>
           </div>
           <%= link_to booking_path(booking),
-            class: "btn btn-danger btn-sm",
+            class: "btn btn-sm",
             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <i class="fa-solid fa-trash"></i>
+              <i class="fa-solid fa-trash-can fa-xl delete-profile-icons"></i>
             <% end %>
           </li>
         <% end %>
       </ul>
     </div>
-
-
-
   </div>
 </div>
