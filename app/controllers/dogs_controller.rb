@@ -19,7 +19,14 @@ class DogsController < ApplicationController
   end
 
   def show
+    @dogs = Dog.all
     @booking = Booking.new
+    @markers = @dogs.geocoded.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude
+      }
+    end
   end
 
   def create
