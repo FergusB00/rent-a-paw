@@ -6,3 +6,12 @@ import "bootstrap"
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+// JM - Reinitialize the carousel on each page load with Turbo
+document.addEventListener("turbo:load", function() {
+  // Select all carousel elements
+  const carousels = document.querySelectorAll('.carousel');
+  carousels.forEach(function(carousel) {
+    new bootstrap.Carousel(carousel); // Initialize each carousel
+  });
+});
