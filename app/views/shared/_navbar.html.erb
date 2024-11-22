@@ -16,8 +16,8 @@
             <%= link_to "Profile", profile_path, class: "nvbr-drop-style" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log out", "#", class: "dropdown-item nvbr-drop-style", data: {turbo_method: :delete} %>
-            <% link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            <%# <%= link_to "Log out", "#", class: "dropdown-item nvbr-drop-style", data: {turbo_method: :delete} %>
+            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item nvbr-drop-style", data: {turbo_method: :delete} %>
           </li>
         </ul>
       </div>
