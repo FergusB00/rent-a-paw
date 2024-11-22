@@ -25,8 +25,8 @@
 
   <!-- Sticky Bottom Navbar -->
   <div class="bottom-navbar align-items-center">
-    <button class="btn bottom-nav-button">Add</button>
+    <%= link_to 'Add', profile_path, class: "btn bottom-nav-button", role: "button"%>
     <i class="fa-solid fa-dog fa-lg landing-dog-icon"></i>
-    <button class="btn bottom-nav-button">Rent</button>
+    <%= link_to 'Rent', dogs_path, class: "btn bottom-nav-button", role: "button"%>
   </div>
 </div>
