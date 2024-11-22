@@ -20,7 +20,7 @@
 
     <!-- Add a new dog -->
     <div data-controller="toggle" class="add-dog-button mb-3 mt-4">
-      <button data-action="click->toggle#fire" class="btn btn-outline-primary add-dog-btn profile-main-text">Add a new dog:</button>
+      <button data-action="click->toggle#fire" class="add-dog-btn w-100 rounded-pill"><i class="fa-solid fa-plus"></i></button>
       <div data-toggle-target="togglableElement" class="d-none" id="dogs" >
         <%= render "dogs/form", dog: @dog %>
       </div>
