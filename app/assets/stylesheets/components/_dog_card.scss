@@ -48,6 +48,21 @@
   background-color: #F4A261 !important;
 }
 
+.search-button {
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-button i {
+  font-size: 18px; /* Icon size */
+}
+
 @media (max-width: 992px) {
   .dog-card {
     flex: 1 1 calc(33.33% - 20px);

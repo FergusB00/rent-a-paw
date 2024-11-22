@@ -3,21 +3,36 @@
   <!-- Carousel Section -->
   <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner">
+
       <div class="carousel-item active">
-        <%= image_tag "landing/dog_4.jpg", alt: "Dog 3", class: "d-block w-100 h-100"%>
+        <%= image_tag "landing/dog_1.jpg", alt: "Dog 1", class: "d-block w-100 h-100"%>
       </div>
+
       <div class="carousel-item">
-        <%= image_tag "https://www.thesprucepets.com/thmb/3nOXTqsZGt5JqZNASHEMpYUnFJM=/2120x0/filters:no_upscale():strip_icc()/GettyImages-553146857-57d0b1115f9b5829f41cac3f.jpg", alt: "Dog 3", class: "d-block w-100 h-100"%>
+        <%= image_tag "landing/dog_2.jpg", alt: "Dog 2", class: "d-block w-100 h-100"%>
       </div>
+
       <div class="carousel-item">
         <%= image_tag "landing/dog_3.jpg", alt: "Dog 3", class: "d-block w-100 h-100"%>
       </div>
+
+      <div class="carousel-item">
+        <%= image_tag "landing/dog_4.jpg", alt: "Dog 4", class: "d-block w-100 h-100"%>
+      </div>
+
+      <div class="carousel-item">
+        <%= image_tag "landing/dog_5.jpg", alt: "Dog 5", class: "d-block w-100 h-100"%>
+      </div>
+
     </div>
   </div>
 
   <!-- Info Section -->
   <section class="landing-info-card">
-    <h2>Welcome to Rent-a-Paw!</h2>
+    <div class="paw-icon-overlap">
+      <i class="fa-solid fa-paw fa-2xl"></i>
+    </div>
+    <h2 class="landing-info-title">Welcome to Rent-a-P<i class="fa-solid fa-paw fa-2xs"></i>w!</h2>
     <p>We work with shelters across the country to provide you with the perfect furry companion!</p>
     <p>Whether you are traveling and missing your dogs, in need of some company for the weekend, or want some experience looking after a four-legged friend, we have the perfect 🐾 match for you.</p>
     <p>We donate 50% of our profits to the shelters we work with, supporting the amazing work they do ❤️.</p>
@@ -25,8 +40,8 @@
 
   <!-- Sticky Bottom Navbar -->
   <div class="bottom-navbar align-items-center">
-    <button class="btn bottom-nav-button">Add</button>
+    <%= link_to 'Add', profile_path, class: "btn bottom-nav-button", role: "button"%>
     <i class="fa-solid fa-dog fa-lg landing-dog-icon"></i>
-    <button class="btn bottom-nav-button">Rent</button>
+    <%= link_to 'Rent', dogs_path, class: "btn bottom-nav-button", role: "button"%>
   </div>
 </div>

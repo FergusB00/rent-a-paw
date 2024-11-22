@@ -1,6 +1,6 @@
 
 <!-- Welcome message to user -->
-<div class="whole-page">
+<div class="whole-page-profile">
   <div class="container" data-controller="insert-in-list">
     <div class="dog-heading">
       <h1><%= "Hi #{@user.first_name}" %></h1>
@@ -12,7 +12,7 @@
     </div>
 
   <!-- Dogs currently listed for hire -->
-    <div class="dog-cards">
+    <div class="dog-cards-profile">
       <div class="list-group" data-insert-in-list-target="items">
         <% @user.dogs.each do |dog| %>
           <%= render "dogs/dog", dog: dog %>
