@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/profile", to: "users#profile"
 
   resources :dogs, only: [:index, :show, :create, :update, :destroy] do
-    resources :bookings
+    resources :bookings, except: [:destroy]
   end
+  resources :bookings, only: [:destroy]
 end
