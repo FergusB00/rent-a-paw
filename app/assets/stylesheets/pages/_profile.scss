@@ -60,10 +60,18 @@
   background-color: #2A9D8F;
   color: #E9C46A;
   border-color: #2A9D8F;
+  border-style: none;
 }
 
 .create-dog-btn {
   background-color: #F4A261;
   color: white;
   border-color: #E9C46A;
+}
+
+::placeholder {
+  font-style: italic;
+  font-weight: lighter;
+  color: #888;
+  font-size: 0.9rem;
 }
