@@ -4,8 +4,18 @@
   <%= f.input :age, placeholder: "Enter the dog's age" %>
   <%= f.input :price, placeholder: "Enter the price: £ per hour" %>
   <%= f.input :size, collection: %w[Extra-Small Small Medium Large Extra-Large] %>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <%= f.input :address %>
+  <%= f.input :description %>
+=======
   <%= f.input :description, placeholder: "Write a short description" %>
   <%= f.input :address, placeholder: "Enter the city you are located in" %>
+>>>>>>> master
+=======
+  <%= f.input :description, placeholder: "Write a short description" %>
+  <%= f.input :address, placeholder: "Enter the city you are located in" %>
+>>>>>>> dc0aea12774113ae158b32872a23607791a46ceb
   <%= f.input :photo, as: :file %>
   <%= f.button :submit, "Add dog", class: "create-dog-btn w-30" %>
 <% end %>
