@@ -1,5 +1,5 @@
 
-.whole-page {
+.whole-page-profile {
   background-color: #F4F1E6;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 // Container for all dog cards
-.dog-card-container {
+.dog-card-container-profile {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -17,13 +17,13 @@
 }
 
 // Individual dog card
-.dog-card {
+.dog-card-profile {
   width: 300px;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   background-color: #f8f9fa;
 }
