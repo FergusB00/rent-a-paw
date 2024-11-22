@@ -1,60 +1,58 @@
-<div class="dog-card-container">
+<div class="dog-card">
+  <div class="dog-card-image">
 
-    <div class="dog-card">
-      <div class="dog-card-image">
-
-      <!-- Dog Name and photo -->
-        <%= link_to dog_path(dog) do %>
-          <% if dog.photo.attached? %>
-            <%= cl_image_tag dog.photo.key, alt: "dog photo", class: "dog-photos w-100 rounded" %>
-          <% else %>
-            <%= image_tag dog.image_url, alt: "dog photo", class: "dog-photos w-100 rounded" %>
-          <% end %>
-        <% end %>
-      </div>
+  <!-- Dog Name and photo -->
+    <%= link_to dog_path(dog) do %>
+      <% if dog.photo.attached? %>
+        <%= cl_image_tag dog.photo.key, alt: "dog photo", class: "dog-photos w-100 rounded" %>
+      <% else %>
+        <%= image_tag dog.image_url, alt: "dog photo", class: "dog-photos w-100 rounded" %>
+      <% end %>
+    <% end %>
+  </div>
 
 
-      <div class="dog-card-footer">
-        <h5 class="dog-name"><%= dog.name %></h5>
-        <div class="dog-card-actions">
-          <!-- Edit Button -->
-          <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#dog<%= dog.id %>"><%= "Edit #{dog.name}'s info" %></button>
-
-          <!-- Edit Button Modal -->
-          <div class="modal fade" id="dog<%= dog.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="dog-card-footer">
+    <h5 class="dog-name"><%= dog.name %></h5>
+    <div class="dog-card-actions d-flex justify-content-between">
+      <!-- Edit Button -->
+      <button type="button" class="btn btn-sm" data-bs-toggle="modal"  data-bs-target="#dog<%= dog.id %>">
+      <i class="fa-regular fa-pen-to-square fa-xl edit-profile-icons"></i>
+      </button>
+      <!-- Edit Button Modal -->
+      <div class="modal fade" id="dog<%= dog.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(dog) do |f| %>
+                <%= f.input :name %>
+                <%= f.input :breed %>
+                <%= f.input :age %>
+                <%= f.input :address%>
+                <%= f.input :price %>
+                <%= f.input :size, collection: %w[Extra-Small Small Medium Large Extra-Large] %>
+                <%= f.input :description %>
+                <%= f.input :photo, as: :file %>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <%= f.button :submit, class: "btn btn-primary" %>
                 </div>
-                <div class="modal-body">
-                  <%= simple_form_for(dog) do |f| %>
-                    <%= f.input :name %>
-                    <%= f.input :breed %>
-                    <%= f.input :age %>
-                    <%= f.input :address%>
-                    <%= f.input :price %>
-                    <%= f.input :size, collection: %w[Extra-Small Small Medium Large Extra-Large] %>
-                    <%= f.input :description %>
-                    <%= f.input :photo, as: :file %>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <%= f.button :submit, class: "btn btn-primary" %>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
+              <% end %>
             </div>
           </div>
-
-          <!-- Delete Button -->
-          <button> <%= link_to "Delete", dog_path(dog),
-          class: "btn btn-danger btn-sm",
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-          %> </button>
         </div>
       </div>
-    </div>
 
+      <!-- Delete Button -->
+      <%= link_to dog_path(dog),
+        class: "btn btn-sm",
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+          <i class="fa-solid fa-trash-can fa-xl delete-profile-icons"></i>
+        <% end %>
+    </div>
+  </div>
 </div>

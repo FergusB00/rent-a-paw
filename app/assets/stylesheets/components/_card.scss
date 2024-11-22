@@ -48,19 +48,68 @@
   background-color: #F4A261 !important;
 }
 
-.search-button {
-  color: white;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  padding: 10px 15px;
+// Container for all dog cards
+.dog-card-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  cursor: pointer;
+  margin-top: 20px;
 }
 
-.search-button i {
-  font-size: 18px;
+.dog-cards {
+  background-color: #F4F1E6;
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px auto;
+  margin-top: 40px;
+  padding-bottom: 10px;
+}
+
+// Individual dog card
+.dog-card {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-color: #f8f9fa;
+}
+
+.dog-card-show {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+// Photo section of the card
+.dog-card-image {
+  position: relative;
+}
+
+.dog-card-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+// Footer section with name and buttons
+.dog-card-footer {
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dog-card-actions {
+  display: flex;
+  gap: 10px;
 }
 
 @media (max-width: 992px) {

@@ -16,5 +16,6 @@ class Dog < ApplicationRecord
   validates :price, presence: true
   validates :size, presence: true, inclusion: { in: %w[Extra-Small Small Medium Large Extra-Large] }
   validates :description, presence: true
+  validates :address, presence: true
   after_validation :geocode, if: :will_save_change_to_address?
 end
